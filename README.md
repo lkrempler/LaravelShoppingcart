@@ -71,6 +71,11 @@ Maybe you prefer to add the item using an array? As long as the array contains t
 Cart::add(['id' => '293ad', 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'options' => ['size' => 'large']]);
 ```
 
+You can optional pass different taxrates to the items.
+```php
+Cart::add('293ad', 'Product 1', 1, 9.99, ['size' => 'large'], 20);
+```
+
 New in version 2 of the package is the possibility to work with the [Buyable](#buyable) interface. The way this works is that you have a model implement the `Buyable` interface, which will make you implement a few methods so the package knows how to get the id, name and price from your model. 
 This way you can just pass the `add()` method a model and the quantity and it will automatically add it to the cart. 
 
